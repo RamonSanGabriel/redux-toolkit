@@ -9,6 +9,8 @@ const SelectStatus = () => {
 
   const handleChange = (e) => {
     dispatch(localAction(e.target.value));
+
+    console.log(status);
   };
 
   const statusFontColor = (className) => {
@@ -23,39 +25,22 @@ const SelectStatus = () => {
 
   return (
     <div>
-      <select
-        value={status}
-        onChange={handleChange}
-        style={{
-          color: statusFontColor(status),
-          backgroundColor: 'transparent',
-          border: 'none',
-          padding: '0.5rem',
-          borderRadius: '0.5rem',
-        }}
-        className={css.selectStatus}
-      >
-        <option className={css.success} value="Success">
-          <p>Success</p>
-        </option>
-        <option className={css.failed} value="Failed">
-          Failed
-        </option>
-        <option className={css.error} value="Error">
-          Error
-        </option>
-      </select>
-      <p
-        className={css.currentStatus}
-        style={{
-          color: statusFontColor(css.currentStatus),
-          fontWeight: 'bold',
-          fontSize: '1.2rem',
-          marginBottom: '1rem',
-        }}
-      >
-        Current status: {status}
-      </p>
+      <div>
+        <select value={status} onChange={handleChange}>
+          <option className={css.success} value="Success">
+            Success
+          </option>
+          <option className={css.failed} value="Failed">
+            Failed
+          </option>
+          <option className={css.error} value="Error">
+            Error
+          </option>
+        </select>
+      </div>
+      <div>
+        <p>Current Status: {status}</p>
+      </div>
       <hr />
       <hr />
       <hr />

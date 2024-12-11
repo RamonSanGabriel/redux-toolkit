@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const localInitialState = {
-  status: 'Failed',
+  status: 'Success',
 };
 
 /* export const localAction = createAction('local/localAction');
