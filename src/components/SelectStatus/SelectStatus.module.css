@@ -1,8 +1,18 @@
-.success {
-  color: green;
+.font {
   font-weight: 600;
 }
-
-.fail {
-  composes: success;
+.success {
+  composes: font;
+  color: green;
+}
+.failed {
+  composes: font;
+  color: orange;
+}
+.error {
+  composes: font;
+  color: red;
+}
+.currentStatus {
+  color: inherit;
 }
