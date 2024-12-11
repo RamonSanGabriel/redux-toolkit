@@ -9,8 +9,8 @@ const SelectStatus = () => {
 
   const handleChange = (e) => {
     dispatch(localAction(e.target.value));
-
-    console.log(status);
+    /*  const color = getTargetValue;
+    e.style.color = color; */
   };
 
   const statusFontColor = (className) => {
@@ -27,7 +27,11 @@ const SelectStatus = () => {
     <div>
       <div>
         <select value={status} onChange={handleChange}>
-          <option className={css.success} value="Success">
+          <option
+            className={css.success}
+            value="Success"
+            color="statusFontColor"
+          >
             Success
           </option>
           <option className={css.failed} value="Failed">
@@ -38,9 +42,9 @@ const SelectStatus = () => {
           </option>
         </select>
       </div>
-      <div>
-        <p>Current Status: {status}</p>
-      </div>
+      {/* <div value={status} onChange={handleChange}> */}
+      <p>Current Status: {status}</p>
+      {/* </div> */}
       <hr />
       <hr />
       <hr />
