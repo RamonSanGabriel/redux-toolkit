@@ -2,17 +2,14 @@
   font-weight: 600;
 }
 .success {
-  composes: font;
   color: green;
 }
 .failed {
-  composes: font;
   color: orange;
 }
 .error {
-  composes: font;
   color: red;
 }
-.currentStatus {
+/* .currentStatus {
   color: inherit;
-}
+} */
