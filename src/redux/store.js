@@ -17,6 +17,6 @@ import { localReducer } from './localSlice';
 export const store = configureStore({
   reducer: {
     balance: balanceReducer,
-    locale: localReducer,
+    local: localReducer,
   },
 });
