@@ -1,6 +1,3 @@
-.font {
-  font-weight: 600;
-}
 .success {
   color: green;
 }
@@ -10,6 +7,3 @@
 .error {
   color: red;
 }
-/* .currentStatus {
-  color: inherit;
-} */

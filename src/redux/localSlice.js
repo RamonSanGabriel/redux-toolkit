@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const localInitialState = {
-  status: '',
+  status: 'white',
 };
 
 /* export const localAction = createAction('local/localAction');

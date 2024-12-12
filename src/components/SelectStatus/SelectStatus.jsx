@@ -1,49 +1,33 @@
 import { useDispatch, useSelector } from 'react-redux';
+// import css from './SelectStatus.module.css';
 import { getStatus } from '../../redux/selector';
 import { localAction } from '../../redux/localSlice';
-import css from './SelectStatus.module.css';
 
 const SelectStatus = () => {
   const dispatch = useDispatch();
   const status = useSelector(getStatus);
+  console.log(status);
 
   const handleChange = (e) => {
     dispatch(localAction(e.target.value));
-    console.log(status);
-    const s = 'Success';
-    const f = 'Failed';
+    const statusColors = {
+      green: 'green',
+      orange: 'orange',
+      red: 'red',
+    };
 
-    if (status === s) {
-      document.body.style.color = 'green';
-    } else if (status === f) {
-      document.body.style.color = 'orange';
-    } else {
-      document.body.style.color = 'red';
-    }
+    document.body.style.color = statusColors[e.target.value] || 'white';
   };
 
   return (
     <div>
-      <select onChange={handleChange} value={status}>
-        <option className={css.success} value="Success">
-          Success
-        </option>
-        <option className={css.failed} value="Failed">
-          Failed
-        </option>
-        <option className={css.error} value="Error">
-          Error
-        </option>
+      <select value={status} onChange={handleChange} name="" id="">
+        <option value="green">Green</option>
+        <option value="orange">Orange </option>
+        <option value="red">Red </option>
       </select>
-
-      {/*   <div value={status} className={css.currentStatus}>
-        <p>Current Status: {status}</p>
-      </div> */}
-      <hr />
-      <hr />
-      <hr />
+      <p>Font color status is {status}</p>
     </div>
   );
 };
-
 export default SelectStatus;
