@@ -21,7 +21,7 @@ const SelectStatus = () => {
 
   return (
     <div>
-      <select value={status} onChange={handleChange} name="" id="">
+      <select value={status} onChange={handleChange} name="select" id="select">
         <option value="green">Green</option>
         <option value="orange">Orange </option>
         <option value="red">Red </option>
